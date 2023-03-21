@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css" />
+
+
+<header>
+    <div>
+        <h1>Welcome <b>
+                <%= user.fullname %>
+            </b> </h1>
+    </div>
+    <div>
+        <img style="padding: 0;border-radius: 10px;width: 40px;height: 40px;" src="<%= user.profile_pic %>" />
+    </div>
+    <div id="lg">
+       <a href="/mycart" id="mycart" class="fa fa-shopping-cart" style="font-size:20px;color:rgba(0, 0, 255)"></a>
+       <input type="hidden"  name="user" value=" <%= user %>">
+        <a class="logout" href="/update">Change Password</a>
+        <a class="logout" href="/logout">logout</a>
+    </div>
+
+</header>

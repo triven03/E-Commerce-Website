@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="/css/style.css" />
+<style>
+    b {
+        color: rgb(51 0 255);
+    }
+</style>
+<%- include("partials/header") %>
+<div class="h2">
+    <h2>Product Lists</h2>
+
+</div>
+    <div id="parent">
+        <div class="formdiv">
+            <% data.forEach(function(product){ %>
+
+
+
+                <div class="box">
+                    <div class="image">
+                        <img src="<%= product.pic %>" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>
+                            <%= product.Name %>
+
+                        </h3>
+                        <h3><%= product.price %> $</h3>
+                        <button class="btnn" style="font-size:10px"  onclick="addCart(this)"">Add to Cart <i class="fa fa-shopping-cart"></i></button>
+                        <input type="hidden"  name="prodid" value="<%= product._id %>">
+                       
+
+                        <p style="display:none;"><%= product.Disc %></p>
+
+                        <button class="btnn" onclick="myFunction(this)">Read more</button>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <% }) %>
+        </div>
+
+<div class="footer" id="foot">
+
+    <button onclick="loadmore()" id="addtodo"> Load More</button>
+
+</div>
+
+
+
+    </div>
+
+
+
+    <script src="/js/Script.js"></script>  <script src="/js/Script.js"></script>

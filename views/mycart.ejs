@@ -1,0 +1,57 @@
+<head>
+	<title>Shopping Cart UI</title>
+	<link rel="stylesheet" type="text/css" href="/css/cart.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900" rel="stylesheet">
+</head>
+
+
+
+<body>
+	<div class="part">
+		<%- include("partials/header") %>
+
+	</div>
+	<div class="Header">
+		<h3 class="Heading">Shopping Cart</h3>
+		<h5 class="Action">Remove all </h5>
+	</div>
+	<div class="CartContainer">
+		
+		<% data.forEach(function(product){ %>
+			<div class="Cart-Items">
+
+				<div class="image-box">
+					<img src="<%= product.pic %>" style="height:120px" />
+				</div>
+				<div class="about">
+					<h1 class="title">
+						<%= product.Name %>
+					</h1>
+
+				</div>
+				<div class="counter">
+					<div class="btn">+</div>
+					<div class="count">2</div>
+					<div class="btn">-</div>
+				</div>
+				<div class="prices">
+					<div class="amount">$ <%= product.price %>
+					</div>
+					<div class="remove"><u>Remove</u></div>
+				</div>
+				
+			</div>
+				<% }) %>
+				<hr>
+				<div class="checkout">
+					<div class="total">
+						<div>
+							<div class="Subtotal">Sub-Total</div>
+							<div class="items">2 items</div>
+						</div>
+						<div class="total-amount">$6.18</div>
+					</div>
+					<button class="button">Checkout</button>
+				</div>
+	</div>
+</body>
